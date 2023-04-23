@@ -41,9 +41,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  display: grid;
-  background-color: pink;
-  place-content: center;
+  background-color: #fff;
   font-size: 18px;
 }
 
