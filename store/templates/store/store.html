@@ -1,68 +1,36 @@
-{% extends 'store/main.html' %} {% load static %}
+{% extends 'store/main.html' %} 
+{% load static %}
+{% static "images" as baseUrl%}
 <!DOCTYPE html>
 {% block content %}
 <div class="container my-5">
   <div class="row">
+    {% for item in items %}
     <div class="col-lg-4 col-md-6 mb-4">
       <div class="card">
         <img
-          src="{%static 'images/items1.jpg'%}"
+          src="{{baseUrl}}/media/{{item.product_image}}"
           class="card-img-top"
           alt="items"
         />
         <div class="card-body">
-          <h5 class="card-title mb-0">Product</h5>
-          <hr class="my-3"/>
-          <div class="cta-wrapper d-flex flex-row align-items-center justify-content-between">
+          <h5 class="card-title mb-0">{{item.product_name}}</h5>
+          <hr class="my-3" />
+          <div
+            class="cta-wrapper d-flex flex-row align-items-center justify-content-between"
+          >
             <div class="cta mb-2">
-                <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+              <button class="btn btn-outline-secondary add-btn">
+                Add to Cart
+              </button>
               <a class="btn btn-outline-success" href="#">View</a>
             </div>
-            <p>$ 20</p>
+            <p>RS {{item.product_price}}</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-          <img
-            src="{%static 'images/items2.jpg'%}"
-            class="card-img-top"
-            alt="items"
-          />
-          <div class="card-body">
-            <h5 class="card-title mb-0">Product</h5>
-            <hr class="my-3"/>
-            <div class="cta-wrapper d-flex flex-row align-items-center justify-content-between">
-              <div class="cta mb-2">
-                  <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-                <a class="btn btn-outline-success" href="#">View</a>
-              </div>
-              <p>$ 20</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-          <img
-            src="{%static 'images/items3.jpg'%}"
-            class="card-img-top"
-            alt="items"
-          />
-          <div class="card-body">
-            <h5 class="card-title mb-0">Product</h5>
-            <hr class="my-3"/>
-            <div class="cta-wrapper d-flex flex-row align-items-center justify-content-between">
-              <div class="cta mb-2">
-                  <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-                <a class="btn btn-outline-success" href="#">View</a>
-              </div>
-              <p>$ 20</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    {% endfor %}
   </div>
 </div>
 
