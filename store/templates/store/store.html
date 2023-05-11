@@ -106,11 +106,18 @@
       {% for item in items %}
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card">
-          <img
-            src="{{baseUrl}}/media/{{item.product_image}}"
-            class="card-img-top"
-            alt="items"
-          />
+          <div class="card-img-container">
+            {% if item.product_offer %}
+            <div class="offer-text ms-2 mt-2 px-3 py-2">
+              <h5 class="mb-0">Special Offer !!</h5>
+            </div>
+              {% endif %}
+            <img
+              src="{{baseUrl}}/media/{{item.product_image}}"
+              class="card-img-top"
+              alt="items"
+            />
+          </div>
           <div class="card-body">
             <h5 class="card-title mb-0">{{item.product_name}}</h5>
             <hr class="my-3" />
@@ -121,7 +128,6 @@
                 <button class="btn btn-outline-secondary add-btn">
                   Add to Cart
                 </button>
-                <a class="btn btn-outline-success" href="#">View</a>
               </div>
               <p>RS {{item.product_price}}</p>
             </div>
