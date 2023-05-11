@@ -83,3 +83,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+.slider {
+  height: 60vh !important;
+}
