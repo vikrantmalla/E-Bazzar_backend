@@ -87,3 +87,14 @@ select {
 .slider {
   height: 60vh !important;
 }
+
+.card-img-container {
+  position: relative;
+}
+
+.offer-text {
+  position: absolute;
+  top: 0;
+  background-color: black;
+  color: #fff;
+}

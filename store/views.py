@@ -3,7 +3,7 @@ from .models import Product
 
 # Create your views here.
 def store(request):
-	items = Product.objects.all()
+	items = Product.objects.order_by('-product_offer')
 	context = {
 		'items' : items
 	}
