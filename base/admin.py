@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Product
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ["product_name", "product_image", "product_price", "product_offer", "product_status"]
+    list_display = ["product_name", "product_offer", "product_status", "product_price"]
     list_filter = ["product_offer", "product_status"]
     search_fields = ["product_name"]
     actions = ["make_out_of_stock", "make_in_stock"]
